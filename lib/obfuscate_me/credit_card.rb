@@ -1,18 +1,20 @@
+require 'obfuscate_me/credit_cards/american_express'
+
 module ObfuscateMe
   # The Obfuscateme::CreditCard class represents a generic credic card.
   class CreditCard
-    attr_reader :cc_number
-
-    def initialize(cc_num, type = :visa)
-      @cc_number = cc_num
-      @type = type
+    attr_reader :type, :number, :expiration_date,
+                :cardholder_name, :security_code
+    def initialize(args)
+      @type = args[:type]
+      @number = args[:number].gsub(/[^0-9]+/, '')
+      @expiration_date = args[:exp_date]
+      @cardholder_name = args[:name]
+      @security_code = args[:security_code]
     end
 
-    def setup_regex
-      @with_dashes_ssn_regex = /\d{3}-\d{2}-\d{4}/
-      @without_dashes_ssn_regex = /\d{9}/
-
-      true
+    def length
+      @number.length
     end
   end
 end
