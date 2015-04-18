@@ -1,8 +1,8 @@
-# ObfuscateMy
+[![Test Coverage](https://codeclimate.com/github/kkirsche/obfuscate-my/badges/coverage.svg)](https://codeclimate.com/github/kkirsche/obfuscate-my)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/obfuscate_my`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Obfuscate My…
 
-TODO: Delete this and the text above, and describe your gem
+Welcome to Obfuscate My…! With this gem, we hope to allow you to work with sensitive information such as credit cards, social security numbers, and more within your code without worrying about accidently exposing your actual information. Want to create one public and one private version of a website for a client? Obfuscate My… can help! Just obfuscate your data in the public version and voila, your data is hidden from viewers! 
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Currently, this is a library to be integrated into your own projects. In the future, this will hopefully gain support for git, directories, and more to allow you to hide sensitive information in any context you may need.
 
 ## Development
 
