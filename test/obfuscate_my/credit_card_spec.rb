@@ -27,6 +27,19 @@ module TestObfuscateMy
                                                   name: 'Kevin Kirsche', security_code: '0123'
         end
       end
+
+      it 'should obfuscate values when requested' do
+        amex = ObfuscateMy::AmericanExpress.new(number: '371449635398431',
+                                                exp_year: 9999, exp_month: 01,
+                                                name: 'Kevin Kirsche', security_code: '0123').
+                                                obfuscate
+
+        amex.type.must_equal :amex
+        amex.cardholder_name.must_equal 'John Doe'
+        amex.number.must_equal '378282246310005'
+        amex.expiration_date.must_equal Time.new(2015, 04, 13)
+        amex.security_code.must_equal '0000'
+      end
     end
   end
 end
