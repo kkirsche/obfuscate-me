@@ -7,7 +7,7 @@ module ObfuscateMy
     end
 
     def valid_length?
-      length == (13 || 16) ? true : false
+      (length == 13 || length == 16) ? true : false
     end
 
     def valid_number?
