@@ -1,7 +1,6 @@
-module ObfuscateMe
-  # The Obfuscateme::SocialSecurityNumber represents a social security number.
+module ObfuscateMy
+  # The ObfuscateMy::SocialSecurityNumber represents a social security number.
   class SocialSecurityNumber
-    alias_method :eql?, :with_dashes_eql?
     attr_reader :ssn
 
     def initialize(ssn)
