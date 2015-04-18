@@ -20,6 +20,19 @@ module TestObfuscateMy
         amex.security_code.must_equal '0123'
       end
 
+      it 'should initialize and correctly assign values of corporate cards.' do
+        amex = ObfuscateMy::AmericanExpress.new number: '378734493671000',
+                                                exp_year: 9999, exp_month: 01,
+                                                name: 'Kevin Kirsche', security_code: '0123'
+
+        assert_kind_of ObfuscateMy::AmericanExpress, amex
+        amex.type.must_equal :amex
+        amex.cardholder_name.must_equal 'Kevin Kirsche'
+        amex.number.must_equal '378734493671000'
+        amex.expiration_date.must_equal Time.new 9999, 01
+        amex.security_code.must_equal '0123'
+      end
+
       it 'should raise an error when it incorrectly is instantiated.' do
         assert_raises RuntimeError do
           amex = ObfuscateMy::AmericanExpress.new number: '',
