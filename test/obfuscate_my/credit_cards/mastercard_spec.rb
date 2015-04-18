@@ -5,7 +5,7 @@ require 'minitest_helper'
 
 module TestObfuscateMy
   # The TestDownloader class below tests the Downloader class from the library
-  class TestVisa
+  class TestMasterCard
     describe 'MasterCard', 'Represents an MasterCard credit card' do
       it 'should initialize and correctly assign values.' do
         mastercard = ObfuscateMy::MasterCard.new number: '5555555555554444',
